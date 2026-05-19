@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+/* 1. Define our custom colors for Tailwind v4 */
+@theme {
+  --color-dark-bg: #060607;
+  --color-dark-card: #18181b;
+  --color-dark-border: #27272a;
+  --color-dark-sidebar: #111114;
+  --color-primary: #8b5cf6;
+}
+
+/* 2. Tell Tailwind to use the 'dark' class for toggling */
+@variant dark (&:where(.dark, .dark *));
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
