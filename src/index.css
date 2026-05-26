@@ -1,19 +1,43 @@
 @import "tailwindcss";
 
-/* 1. Define our custom colors for Tailwind v4 */
 @theme {
-  --color-dark-bg: #060607;
+  --color-dark-bg: #09090b;
   --color-dark-card: #18181b;
   --color-dark-border: #27272a;
-  --color-dark-sidebar: #111114;
+  --color-dark-sidebar: #060607; 
   --color-primary: #8b5cf6;
 }
 
-/* 2. Tell Tailwind to use the 'dark' class for toggling */
 @variant dark (&:where(.dark, .dark *));
 
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================
+   Estilos personalizados da Scrollbar
+   ========================================== */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3f3f46 transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #27272a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-primary);
 }
