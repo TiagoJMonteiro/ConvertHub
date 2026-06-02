@@ -33,7 +33,7 @@ const Favorites = () => {
           ))}
         </div>
       ) : (
-        /* Sleek Empty State if nothing is favorited yet */
+        /*Empty State if nothing is favorited yet */
         <div className="bg-white/40 dark:bg-zinc-900/20 border border-zinc-200/50 dark:border-white/5 p-16 rounded-3xl backdrop-blur-xl text-center max-w-xl mx-auto mt-12 flex flex-col items-center justify-center space-y-4 shadow-sm">
           <div className="p-4 rounded-2xl bg-zinc-100 dark:bg-white/5 text-zinc-400 dark:text-zinc-600">
             <Star className="w-10 h-10" />

@@ -7,7 +7,7 @@ const CharacterCounter = ({ tool }) => {
   const chars = text.length;
   const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
   const lines = text === '' ? 0 : text.split('\n').length;
-  const readTime = Math.ceil(words / 200); // Avg 200 words per minute
+  const readTime = Math.ceil(words / 200); 
 
   return (
     <ToolPageWrapper tool={tool}>

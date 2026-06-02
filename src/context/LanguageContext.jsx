@@ -16,7 +16,7 @@ const translations = {
     back: "Back to dashboard",
     addFav: "Add to favorites",
     
-    // Palavras novas para as ferramentas
+   
     valueToConvert: "Value to convert",
     from: "From",
     to: "To",
@@ -45,7 +45,7 @@ const translations = {
     back: "Voltar ao painel",
     addFav: "Adicionar aos favoritos",
 
-    // Palavras novas para as ferramentas
+   
     valueToConvert: "Valor a converter",
     from: "De",
     to: "Para",

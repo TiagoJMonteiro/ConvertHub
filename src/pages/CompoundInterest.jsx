@@ -3,20 +3,20 @@ import ToolPageWrapper from '../components/ToolPageWrapper';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const CompoundInterest = ({ tool }) => {
-  // Using strings for inputs so the "0" can be completely cleared
+ 
   const [principal, setPrincipal] = useState('1000');
   const [rate, setRate] = useState('5');
   const [years, setYears] = useState('10');
   const [monthlyContribution, setMonthlyContribution] = useState('100');
 
-  // Parse strings to numbers for math
+  
   const p = parseFloat(principal) || 0;
   const r = (parseFloat(rate) || 0) / 100 / 12;
   const y = parseFloat(years) || 0;
   const m = parseFloat(monthlyContribution) || 0;
   const n = y * 12;
 
-  // Calculate Graph Data
+
   const data = useMemo(() => {
     let currentData = [];
     let currentPrincipal = p;
@@ -28,7 +28,7 @@ const CompoundInterest = ({ tool }) => {
         Invested: Math.round(currentPrincipal),
         Interest: Math.round(currentTotal - currentPrincipal)
       });
-      // Advance by 1 year (12 months)
+      
       for (let month = 1; month <= 12; month++) {
         currentTotal = (currentTotal + m) * (1 + r);
         currentPrincipal += m;
@@ -44,7 +44,7 @@ const CompoundInterest = ({ tool }) => {
     <ToolPageWrapper tool={tool}>
       <div className="space-y-8 max-w-5xl">
         
-        {/* Top Section: Inputs & Summary */}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white/60 dark:bg-zinc-900/40 backdrop-blur-xl p-8 rounded-3xl border border-zinc-200/50 dark:border-white/10 space-y-6 shadow-sm">
             {[
@@ -83,7 +83,7 @@ const CompoundInterest = ({ tool }) => {
           </div>
         </div>
 
-        {/* Bottom Section: Graph */}
+        
         <div className="bg-white/60 dark:bg-zinc-900/40 backdrop-blur-xl p-8 rounded-3xl border border-zinc-200/50 dark:border-white/10 shadow-sm h-96">
           <h3 className="text-lg font-semibold text-zinc-950 dark:text-zinc-50 mb-6">Growth Over Time</h3>
           <ResponsiveContainer width="100%" height="100%">

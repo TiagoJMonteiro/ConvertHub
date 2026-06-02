@@ -4,14 +4,14 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Toaster } from 'react-hot-toast';
 
 
-// 1. CONTEXTOS (A "memória global" do site)
+
 // Importamos o tradutor (Language) e os Favoritos. Tudo o que estiver dentro deles 
 // partilha a mesma informação em todas as páginas.
 
 import { LanguageProvider, useLanguage } from './context/LanguageContext'; // Adicionado o useLanguage!
 import { FavoritesProvider } from './context/FavoritesContext';
 
-// Componentes Base (As "peças" lego que se repetem)
+// Componentes Base 
 import Sidebar from './components/Sidebar';
 import Topbar from './components/Topbar';
 import ToolPageWrapper from './components/ToolPageWrapper';
@@ -35,12 +35,12 @@ import PomodoroTimer from './pages/PomodoroTimer';
 import { tools } from './data';
 
 
-// 2. FERRAMENTA EM CONSTRUÇÃO (O Ecrã de Backup)
-// Se no teu data.js houver uma ferramenta que tu ainda não criaste o ficheiro, 
-// o React usa isto para não "crashar" e mostrar uma página amigável de erro.
+
+// Se no data.js houver uma ferramenta que ainda não criei o ficheiro, 
+// o React usa isto para não "crashar" e mostrar uma página de erro.
 
 const PlaceholderTool = ({ tool }) => {
-  const { t } = useLanguage(); // Ligamos o nosso dicionário aqui!
+  const { t } = useLanguage(); // 
   return (
     <ToolPageWrapper tool={tool}>
       <div className="bg-white/60 dark:bg-zinc-900/40 backdrop-blur-xl p-8 rounded-3xl border border-zinc-200/50 dark:border-white/10 dark:text-zinc-400 text-center py-20 shadow-sm">

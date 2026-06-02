@@ -52,9 +52,8 @@ const BmiCalculator = ({ tool }) => {
         
         {/* LADO ESQUERDO: Caixas onde o utilizador escreve */}
         <div className="md:col-span-1 bg-white p-8 rounded-2xl border border-zinc-200 dark:bg-[#121313] dark:border-dark-border space-y-6 shadow-sm">
-          {/* Truque de programador: em vez de escrever as caixas de Altura e Peso uma a uma, 
-            fazemos uma lista e o React desenha as duas automaticamente com o '.map' 
-          */}
+          
+         
           {[ 
             { label: 'Altura (cm)', val: height, set: setHeight }, 
             { label: 'Peso (kg)', val: weight, set: setWeight } 
@@ -78,7 +77,7 @@ const BmiCalculator = ({ tool }) => {
           
           <div className="flex flex-col sm:flex-row sm:items-end gap-3.5">
             <span className="text-7xl font-extrabold text-primary">{finalBmi}</span>
-            {/* O "crachá" que mostra se estás normal, obeso, etc. Puxa a cor que definimos na lógica em cima! */}
+            {/* a cena que mostra se estás normal, obeso, etc. Puxa a cor que definimos na lógica em cima! */}
             <span className={`inline-flex items-center w-max rounded-full px-4 py-1.5 text-sm font-semibold mb-2 ${status.color}`}>
               {status.text}
             </span>

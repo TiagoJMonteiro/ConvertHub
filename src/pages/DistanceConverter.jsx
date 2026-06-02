@@ -3,7 +3,7 @@ import ToolPageWrapper from '../components/ToolPageWrapper';
 import { SwapIcon } from '../components/Icons';
 
 // Dicionário de unidades com a sua taxa de conversão relativa a 1 Metro
-// Adicionámos a propriedade 'sys' para organizar o menu suspenso!
+
 const units = {
   mm: { name: 'Milímetros (mm)', rate: 0.001, sys: 'metric' },
   cm: { name: 'Centímetros (cm)', rate: 0.01, sys: 'metric' },

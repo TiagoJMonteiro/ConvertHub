@@ -3,7 +3,7 @@ import ToolPageWrapper from '../components/ToolPageWrapper';
 import { SwapIcon } from '../components/Icons';
 import { Search, ChevronDown } from 'lucide-react';
 
-// Extensive list of mock exchange rates (relative to USD)
+
 const currencies = {
   USD: { name: 'US Dollar', rate: 1.0 },
   EUR: { name: 'Euro', rate: 0.92 },
@@ -19,13 +19,13 @@ const currencies = {
   ZAR: { name: 'South African Rand', rate: 18.90 },
 };
 
-// Custom Searchable Dropdown Component
+
 const SearchableSelect = ({ value, onChange, label }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState('');
   const ref = useRef(null);
 
-  // Close dropdown when clicking outside
+  
   useEffect(() => {
     const handleClickOutside = (event) => { if (ref.current && !ref.current.contains(event.target)) setIsOpen(false); };
     document.addEventListener("mousedown", handleClickOutside);
@@ -40,7 +40,7 @@ const SearchableSelect = ({ value, onChange, label }) => {
     <div className="flex-1 w-full space-y-2.5" ref={ref}>
       <label className="text-sm font-semibold text-zinc-950 dark:text-zinc-50">{label}</label>
       <div className="relative">
-        {/* Main Select Button */}
+      
         <div 
           onClick={() => setIsOpen(!isOpen)}
           className="flex items-center justify-between w-full h-14 px-5 rounded-xl bg-white dark:bg-black/20 border border-zinc-200 dark:border-white/10 text-zinc-950 dark:text-zinc-50 cursor-pointer hover:border-primary/50 transition-colors"
@@ -49,7 +49,7 @@ const SearchableSelect = ({ value, onChange, label }) => {
           <ChevronDown className="w-5 h-5 text-zinc-500" />
         </div>
 
-        {/* Dropdown Menu */}
+        
         {isOpen && (
           <div className="absolute z-50 w-full mt-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 rounded-xl shadow-2xl overflow-hidden">
             <div className="flex items-center px-4 py-3 border-b border-zinc-200 dark:border-white/5 bg-zinc-50 dark:bg-black/20">
@@ -85,17 +85,17 @@ const SearchableSelect = ({ value, onChange, label }) => {
 
 
 const CurrencyConverter = ({ tool }) => {
-  // Using string for amount so "0" clears correctly
+  
   const [amount, setAmount] = useState('100');
   const [from, setFrom] = useState('USD');
   const [to, setTo] = useState('EUR');
   
-  // Calculate exchange
+  
   const numAmount = parseFloat(amount) || 0;
   const rateFromUSD = currencies[from].rate;
   const rateToUSD = currencies[to].rate;
   
-  // Convert from 'From' to USD, then USD to 'To'
+  
   const exchangeRate = (1 / rateFromUSD) * rateToUSD;
   const result = numAmount * exchangeRate;
 
@@ -131,7 +131,7 @@ const CurrencyConverter = ({ tool }) => {
         </div>
 
         <div className="mt-8 p-8 rounded-2xl bg-white/50 dark:bg-black/20 border border-zinc-200 dark:border-white/5 flex flex-col justify-center space-y-2 relative overflow-hidden">
-           {/* Subtle glow inside the result box */}
+          
            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl pointer-events-none"></div>
            
            <p className="text-zinc-500 dark:text-zinc-400 text-sm font-medium z-10">{numAmount} {from} =</p>

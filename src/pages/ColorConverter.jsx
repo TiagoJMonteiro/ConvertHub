@@ -27,7 +27,7 @@ const ColorConverter = ({ tool }) => {
       let h, s, l = (max + min) / 2;
 
       if (max === min) {
-        h = s = 0; // Tons de cinza
+        h = s = 0;
       } else {
         let d = max - min;
         s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
@@ -54,7 +54,7 @@ const ColorConverter = ({ tool }) => {
     <ToolPageWrapper tool={tool}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
         
-        {/* Painel de Inputs e Outputs */}
+        
         <div className="bg-white/60 dark:bg-zinc-900/40 backdrop-blur-xl p-8 rounded-3xl border border-zinc-200/50 dark:border-white/10 space-y-6 shadow-sm">
           <div className="space-y-2">
             <label className="text-sm font-semibold dark:text-zinc-300">Cor Hexadecimal (HEX)</label>
@@ -85,7 +85,6 @@ const ColorConverter = ({ tool }) => {
           </div>
         </div>
 
-        {/* Caixa de Pré-visualização da Cor */}
         <div className="bg-white/60 dark:bg-zinc-900/40 backdrop-blur-xl p-8 rounded-3xl border border-zinc-200/50 dark:border-white/10 flex flex-col items-center justify-center space-y-6 shadow-sm">
           <div 
             className="w-full h-64 rounded-3xl shadow-inner transition-colors duration-300 border border-black/10 dark:border-white/10"

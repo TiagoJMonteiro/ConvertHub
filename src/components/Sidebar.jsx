@@ -20,7 +20,7 @@ const Sidebar = () => {
       </Link>
       
       <nav className="flex-1 px-3 space-y-7">
-        {/* Main Navigation links */}
+        
         <div className="space-y-1">
           <Link to="/" className={`group flex w-full items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg transition-colors ${isActive('/') ? activeClass : defaultClass}`}>
             <DashboardIcon /> {t('dashboard')}
@@ -30,7 +30,7 @@ const Sidebar = () => {
           </Link>
         </div>
 
-        {/* Dynamic categories mapping */}
+        
         {Object.values(categories).map(cat => (
           <div key={cat.name} className="space-y-1.5">
             <h4 className="text-xs font-semibold text-zinc-500 tracking-wider px-3">{t(cat.id)}</h4>

@@ -4,7 +4,7 @@ import ConverterCard from '../components/ConverterCard';
 import { categories } from '../data';
 
 const Dashboard = () => {
-  // 1. Create a state to hold the search text
+  
   const [searchQuery, setSearchQuery] = useState('');
 
   // 2. Filter the categories and tools based on the search query
@@ -14,17 +14,17 @@ const Dashboard = () => {
       tool.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
       tool.desc.toLowerCase().includes(searchQuery.toLowerCase())
     );
-    // Return the category but only with the matching tools
+    
     return { ...cat, tools: matchingTools };
   }).filter(cat => cat.tools.length > 0); // 3. Hide empty categories completely
 
   return (
     <div className="p-8 md:p-12 space-y-12 max-w-7xl mx-auto w-full">
       
-      {/* Frosted Glass Welcome Banner */}
+      
       <div className="relative overflow-hidden p-10 rounded-3xl border border-zinc-200/50 dark:border-white/10 bg-white/60 dark:bg-zinc-900/40 backdrop-blur-2xl space-y-10 shadow-lg">
         
-        {/* Soft background glows */}
+        
         <div className="absolute -top-32 -right-32 w-96 h-96 bg-primary/15 rounded-full blur-[100px] pointer-events-none"></div>
         <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 

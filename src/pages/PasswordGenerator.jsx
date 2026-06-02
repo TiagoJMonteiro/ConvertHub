@@ -6,8 +6,7 @@ import toast from 'react-hot-toast';
 const PasswordGenerator = ({ tool }) => {
 
   
-  // 1. A MEMÓRIA DA MÁQUINA (Estados do React)
-  // O que a nossa aplicação precisa de saber a todo o momento:
+  
  
   const [password, setPassword] = useState(''); // A palavra-passe gerada
   const [length, setLength] = useState(16);     // O tamanho (começa com 16 caracteres)
@@ -17,10 +16,10 @@ const PasswordGenerator = ({ tool }) => {
 
 
   // 2. O MOTOR (Lógica para criar a password)
-  // Esta função é chamada para "cozinhar" uma nova password
+  // Esta função é chamada para fazer uma nova password
  
   const generate = () => {
-    // Todos os ingredientes possíveis agrupados por tipo
+    // Todos as opçoes possíveis agrupadas por tipo
     const chars = {
       upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 
       lower: 'abcdefghijklmnopqrstuvwxyz',
@@ -28,19 +27,19 @@ const PasswordGenerator = ({ tool }) => {
       syms: '!@#$%^&*()_+~`|}{[]:;?><,./-='
     };
     
-    let charset = ''; // A nossa "sopa de letras" final
+    let charset = ''; 
     let newPass = ''; // A password que vai ser construída
     
-    // Verificamos os interruptores: se o utilizador quer números, atiramos os números para a sopa!
+    // Verificamos os interruptores: se o utilizador quer números, atiramos os números para a passe!
     if (opts.upper) charset += chars.upper;
     if (opts.lower) charset += chars.lower;
     if (opts.nums) charset += chars.nums;
     if (opts.syms) charset += chars.syms;
     
-    // Sistema de segurança: se o utilizador desligar TUDO, forçamos a usar pelo menos minúsculas
+    // se o utilizador desligar TUDO, forçamos a usar pelo menos minúsculas
     if (!charset) charset = chars.lower;
 
-    // A máquina vai buscar um caracter à sorte dentro da "sopa" até atingir o tamanho pretendido
+    // A máquina vai buscar um caracter à sorte dentro das opçoes possiveis até atingir o tamanho pretendido
     for (let i = 0; i < length; i++) {
       newPass += charset[Math.floor(Math.random() * charset.length)];
     }
@@ -67,7 +66,7 @@ const PasswordGenerator = ({ tool }) => {
   };
 
   
-  // 5. O VISUAL (O HTML que desenha a página)
+  // 5. O VISUAL
 
   return (
     <ToolPageWrapper tool={tool}>
@@ -103,7 +102,7 @@ const PasswordGenerator = ({ tool }) => {
         {/* ÁREA DE OPÇÕES: A Barra de tamanho e as caixas de seleção */}
         <div className="space-y-6">
           
-          {/* A Barra deslizante para escolher o tamanho da password */}
+          {/* A Barra  para escolher o tamanho da password */}
           <div className="space-y-3">
             <div className="flex justify-between">
               <label className="font-semibold dark:text-zinc-300">Tamanho</label>
@@ -122,7 +121,7 @@ const PasswordGenerator = ({ tool }) => {
           
           {/* As 4 caixinhas de seleção (Checkbox) */}
           <div className="grid grid-cols-2 gap-4 pt-4">
-            {/* Truque de programador: Uma lista rápida para criar os 4 botões de uma vez em vez de repetir código */}
+            {/* Uma lista rápida para criar os 4 botões de uma vez em vez de repetir código */}
             {[ 
               { id: 'upper', label: 'Maiúsculas (A-Z)' }, 
               { id: 'lower', label: 'Minúsculas (a-z)' }, 
